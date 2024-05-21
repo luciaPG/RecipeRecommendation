@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  display: flex;
+  justify-content: center;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.Home {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+.Home .videoBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.Home .videoBg video {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.Home .sectionText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+}
+.Home .sectionText .buttons .btn {
+  background-color: rgba(88, 147, 53, 0.9);
+  margin-right: 3rem;
+  padding-left: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-right: 2rem;
+  border-radius: 7rem;
+  width: 30rem;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+.Home .sectionText .text {
+  font-size: 6rem;
+  font-weight: 900;
+  padding: 0;
+}
+.Home .sectionText .substitle {
+  font-size: 3rem;
+  font-weight: 1000;
+  padding: 0;
+}
+.Home .sectionText .icon {
+  position: absolute;
+}
+.Home .sectionText p {
+  font-size: var(--normalFontSize);
+  font-weight: 500;
+}
+
+@media screen and (max-width: 480px) {
+  .Home .sectionText {
+    font-size: 1.5em;
+  }
+  .Home .sectionText h1 {
+    font-size: 1rem;
+    font-weight: 900;
+  }
+  .Home .sectionText p {
+    padding: 1rem 0;
+    font-size: var(--h2FontSize);
+    max-width: 70%;
+    margin: auto;
+  }
+  .Home .sectionText .btn {
+    font-size: var(--h3FontSize);
+    margin: auto;
+  }
+}
+@media screen and (min-width: 480px) {
+  .Home .sectionText {
+    font-size: 1.5rem;
+  }
+  .Home .sectionText h1 {
+    font-size: var(--biggestFontSize);
+    font-weight: 900;
+  }
+  .Home .sectionText p {
+    padding: 1rem 0;
+    font-size: var(--h2FontSize);
+    max-width: 70%;
+    margin: auto;
+  }
+  .Home .sectionText .btn {
+    font-size: var(--h3FontSize);
+    margin: auto;
+  }
+}
+@media screen and (max-width: 769px) {
+  .Home .sectionText h1 {
+    font-size: 2rem;
+    font-weight: 900;
+    max-width: 70%;
+    margin: auto;
+  }
+  .Home .sectionText p {
+    font-size: var(--h2FontSize);
+    max-width: 70%;
+    margin: auto;
+  }
+  .Home .sectionText .btn {
+    gap: 0.5rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    font-size: var(--h3FontSize);
+    margin: auto;
+  }
+}
+@media screen and (min-width: 769px) {
+  .Home .sectionText {
+    width: 100%;
+  }
+  .Home .sectionText h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    max-width: 70%;
+    margin: auto;
+  }
+  .Home .sectionText p {
+    padding: 1rem 0;
+    font-size: var(--h2FontSize);
+    max-width: 70%;
+    margin: auto;
+  }
+  .Home .sectionText .btn {
+    gap: 0.5rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    font-size: var(--h3FontSize);
+    margin: auto;
+  }
+}
+@media screen and (min-width: 1040px) {
+  .Home {
+    position: absolute;
+  }
+  .Home .sectionText {
+    padding-right: 0rem;
+  }
+  .Home .sectionText h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    max-width: 70%;
+    margin: auto;
+  }
+  .Home .sectionText p {
+    font-size: var(--h2FontSize);
+    max-width: 70%;
+    margin: auto;
+  }
+}/*# sourceMappingURL=HomeScreen.css.map */
