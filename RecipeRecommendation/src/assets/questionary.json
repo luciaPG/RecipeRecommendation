@@ -1,0 +1,139 @@
+{
+    "questions": [
+        {
+            "id": 1,
+            "question": "How would you describe your body frame?",
+            "options": [
+                "Thin and lanky",
+                "Medium build",
+                "Solid and sturdy"
+            ]
+        },
+        {
+            "id": 2,
+            "question": "What is your typical appetite like?",
+            "options": [
+                "Variable, sometimes strong, sometimes weak",
+                "Strong and consistent",
+                "Slow and steady"
+            ]
+        },
+        {
+            "id": 3,
+            "question": "How is your digestion?",
+            "options": [
+                "Irregular, prone to gas and bloating",
+                "Strong, can eat almost anything",
+                "Slow, tendency towards heaviness after meals"
+            ]
+        },
+        {
+            "id": 4,
+            "question": "How do you generally handle stress?",
+            "options": [
+                "Become anxious or worried easily",
+                "Tend to get angry or irritable",
+                "Prefer to avoid conflict, may become withdrawn"
+            ]
+        },
+        {
+            "id": 5,
+            "question": "How do you sleep?",
+            "options": [
+                "Light sleeper, prone to insomnia",
+                "Deep sleeper, but may wake up easily",
+                "Heavy sleeper, difficulty waking up in the morning"
+            ]
+        },
+        {
+            "id": 6,
+            "question": "How is your skin?",
+            "options": [
+                "Dry, prone to cracking",
+                "Warm, sensitive, prone to rashes",
+                "Oily, prone to acne or congestion"
+            ]
+        },
+        {
+            "id": 7,
+            "question": "How is your hair?",
+            "options": [
+                "Dry, thin, and prone to split ends",
+                "Fine, but prone to premature graying or balding",
+                "Thick, oily, and lustrous"
+            ]
+        },
+        {
+            "id": 8,
+            "question": "How do you handle changes in weather?",
+            "options": [
+                "Tend to feel cold easily, especially in windy weather",
+                "Tend to feel hot easily, especially in humid weather",
+                "Tend to feel sluggish in damp or cold weather"
+            ]
+        },
+        {
+            "id": 9,
+            "question": "What is your typical energy level throughout the day?",
+            "options": [
+                "High energy in short bursts, followed by fatigue",
+                "Moderate and steady energy throughout the day",
+                "Low energy, especially in the mornings"
+            ]
+        },
+        {
+            "id": 10,
+            "question": "How do you prefer to spend your free time?",
+            "options": [
+                "Engaging in stimulating activities or hobbies",
+                "Exercising or being physically active",
+                "Relaxing or practicing mindfulness"
+            ]
+        },
+        {
+            "id": 11,
+            "question": "How is your memory?",
+            "options": [
+                "Quick to learn, but also quick to forget",
+                "Sharp and precise",
+                "Slow to learn, but once learned, tends to retain information well"
+            ]
+        },
+        {
+            "id": 12,
+            "question": "How do you respond to new experiences or changes?",
+            "options": [
+                "Tend to feel anxious or overwhelmed",
+                "Tend to feel competitive or ambitious",
+                "Tend to feel cautious or resistant"
+            ]
+        },
+        {
+            "id": 13,
+            "question": "What is your natural body temperature like?",
+            "options": [
+                "Cold hands and feet, especially in cooler weather",
+                "Warm hands and feet, especially in warmer weather",
+                "Generally stable body temperature"
+            ]
+        },
+        {
+            "id": 14,
+            "question": "How do you handle conflicts or confrontations?",
+            "options": [
+                "Avoid them whenever possible",
+                "Confront them directly and assertively",
+                "Seek compromise and harmony"
+            ]
+        },
+        {
+            "id": 15,
+            "question": "How is your general mood?",
+            "options": [
+                "Easily excited or enthusiastic, but also prone to anxiety",
+                "Confident and assertive, but also prone to anger",
+                "Calm and steady, but also prone to melancholy"
+            ]
+        }
+    ]
+}

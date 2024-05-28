@@ -1,78 +1,58 @@
-/* QuestionaryScreen.css */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  background-color: rgb(212, 223, 235);
+}
+
 .Home {
+  background-color: rgba(88, 147, 53, 0.95);
   display: flex;
+  align-items: stretch;
   flex-direction: column;
-  align-items: center;
-  justify-content: flex-start; /* Align content to the top */
-  height: 100vh;
-  background-color: wheat; /* Set the desired background color for the whole page */
 }
-
-.topBar {
-  width: 100%;
-  background-color: #2f855a;
-  color: white;
-  padding: 10px 20px;
+.Home .question {
+  text-align: center;
+  font-weight: bold;
+}
+.Home .topBar {
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-top: -5.5rem;
   display: flex;
-  align-items: center;
   justify-content: center;
+  width: "100%";
 }
-
-.barContent {
+.Home .topBar .barContent {
+  margin-top: 2.5rem;
   display: flex;
-  align-items: center;
+  align-items: baseline;
 }
-
-.icon {
-  font-size: 2rem;
-  margin-right: 10px;
-}
-
-.textDiv {
+.Home .topBar .barContent .textDiv {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  margin-left: -3rem;
 }
-
-.brandName {
-  margin: 0;
+.Home .topBar .barContent .textDiv .brandName {
+  font-family: "Poppins", sans-serif;
+  margin-top: -1.4rem;
   font-size: 1.5rem;
-}
-
-.form {
-  width: 100%;
-  max-width: 600px;
-  margin: 20px;
-  padding: 20px;
-  background-color: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-fieldset {
-  margin-bottom: 20px;
-}
-
-.radio {
-  margin: 0;
-}
-
-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #2f855a;
   color: white;
-  border: none;
+  margin-left: 1rem;
+}
+.Home .topBar .barContent .icon {
+  z-index: 500;
+  margin-top: 3rem;
+  margin-left: 2rem;
+  height: 5rem;
+  width: 5rem;
+}
+.Home .form {
+  margin-left: 10rem;
+  margin-top: 5rem;
+  background-color: white;
+}
+.Home .form .input {
+  background-color: rgb(255, 255, 255);
   border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #276749;
-}
-
-button:disabled {
-  background-color: #96cab3;
-  cursor: not-allowed;
-}
+  height: 1.7rem;
+  width: 20rem;
+  border: 1px solid rgb(169, 166, 166);
+}/*# sourceMappingURL=QuestionaryScreen.css.map */
