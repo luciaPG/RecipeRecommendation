@@ -8,12 +8,22 @@
 }
 
 .Home{
-    background-color: rgb(88, 83, 83);
-
-.topBar {
     background-color:  rgba(88, 147, 53,0.95);
-    height: 10rem;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+
+.question{
+    text-align: center;
+    font-weight: bold;
+
+}
+.topBar {
+    background-color: rgba(0, 0, 0, 0.5); 
     margin-top: -5.5rem;
+    display:flex;
+    justify-content: center;
+    width:'100%';
     .barContent {
         margin-top: 2.5rem;
        
