@@ -1,5 +1,3 @@
-import { CardBody, background } from "@chakra-ui/react";
-
 const baseStyle = {
   card: {
     backgroundColor: 'white',
