@@ -5,20 +5,32 @@
 import './QuestionaryScreen.css';
 import questionary from '/src/assets/questionary.json'
 import React, { useState } from 'react';
-import { Card, CardBody, Text, FormControl, FormLabel, RadioGroup, Stack, Radio, Button } from '@chakra-ui/react';
+import { Card, CardBody, Text, FormControl, Box, CloseButton, FormLabel, RadioGroup, Stack, Radio, Button, useDisclosure } from '@chakra-ui/react';
 import { PiPlantFill } from "react-icons/pi";
+import { MdOutlineError } from "react-icons/md";
+import {
+    Alert,
+    AlertIcon,
+    AlertTitle,
+    AlertDescription,
+} from '@chakra-ui/react'
 import cardTheme from './CardStyling.jsx'
+import AlertStyling from './AlertStyling';
 
 const QuestionaryScreen = () => {
-    const [answers, setAnswers] = useState({});
+    const [answers, setAnswers] = useState([]);
     const [currentQuestion, setCurrentQuestion] = useState(0);
-    
+    const {
+        isOpen,
+        onClose,
+        onOpen,
+    } = useDisclosure({ defaultIsOpen: false })
+
 
     const handleOptionChange = (option, questionIndex) => {
-        setAnswers(prevAnswers => ({
-            ...prevAnswers,
-            [questionIndex]: option
-        }));
+        let newAnswers = [...answers];
+        newAnswers[questionIndex] = option.answer_id;
+        setAnswers(newAnswers);
     };
 
     const handlePreviousQuestion = () => {
@@ -29,9 +41,10 @@ const QuestionaryScreen = () => {
         setCurrentQuestion(prevQuestion => Math.min(prevQuestion + 1, questionary.questions.length - 1));
     };
 
-    function finishFunction(){
+    function finishFunction() {
         console.log(answers)
-        if( Object.keys(answers).length!==15){
+        if (Object.keys(answers).length !== 15) {
+            onOpen()
             console.log('alert')
         }
     }
@@ -49,17 +62,17 @@ const QuestionaryScreen = () => {
             <Card {...cardTheme.card}>
                 <CardBody {...cardTheme.cardBody}>
                     <Text className='question'>{questionary.questions[currentQuestion].question}</Text>
-                    {questionary.questions[currentQuestion].options.map((option, index) => (
+                    {questionary.questions[currentQuestion].options.map((option) => (
                         <Button
-                            key={index}
+                            key={option.answer_id}
                             padding={'1px'}
-                            border={answers[currentQuestion] === option ? '0px' : 'none'}
-                            bg={answers[currentQuestion] === option ? 'lightgray' : 'white'}
-                            _hover={{ bg: answers[currentQuestion] === option ? 'lightgray' : 'white', border: 'none' }}
+                            border={answers[currentQuestion] === option.answer_id ? '0px' : 'none'}
+                            bg={answers[currentQuestion] === option.answer_id ? 'lightgray' : 'white'}
+                            _hover={{ bg: answers[currentQuestion] === option.answer_id ? 'lightgray' : 'white', border: 'none' }}
                             _focus={{ outline: 'none' }}
                             onClick={() => handleOptionChange(option, currentQuestion)}
                         >
-                            <Text style={{ color: 'black' }}>{option}</Text>
+                            <Text style={{ color: 'black' }}>{option.option}</Text>
                         </Button>
                     ))}
                     <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', marginTop: '2rem', marginLeft: '2rem' }}>
@@ -71,7 +84,7 @@ const QuestionaryScreen = () => {
                                 Continue
                             </Button>
                         ) : (
-                            <Button {...cardTheme.btn} colorScheme='teal' size='md' mt={4} onClick={()=>finishFunction()}>
+                            <Button {...cardTheme.btn} colorScheme='teal' size='md' mt={4} onClick={() => finishFunction()}>
                                 Finish
                             </Button>
                         )}
@@ -79,6 +92,30 @@ const QuestionaryScreen = () => {
 
                 </CardBody>
             </Card>
+
+            {isOpen ? (
+                <Alert {...AlertStyling.alert} status='success'>
+                    <MdOutlineError {...AlertStyling.icon}/>
+                    <Box {...AlertStyling.box}>
+                        <AlertTitle {...AlertStyling.title}>ERROR</AlertTitle>
+                        <AlertDescription {...AlertStyling.description}>
+                           All the questions need to be answered in order to obtain an answer
+                        </AlertDescription>
+                    </Box>
+                    <CloseButton
+                        {...AlertStyling.closeButton}
+                        alignSelf='flex-start'
+                        position='relative'
+                        right={-1}
+                        top={-1}
+                        onClick={onClose}
+                        _active={{ bg: 'black' }}
+                        _hover={{ border: 'none' }}
+                        
+
+                    />
+                </Alert>
+            ) : null}
 
         </div>
     );

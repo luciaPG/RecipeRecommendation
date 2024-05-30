@@ -1,138 +1,273 @@
 {
     "questions": [
         {
-            "id": 1,
+            "question_id": 1,
             "question": "How would you describe your body frame?",
             "options": [
-                "Thin and lanky",
-                "Medium build",
-                "Solid and sturdy"
+                {
+                    "answer_id": 1,
+                    "option": "Thin and lanky"
+                },
+                {
+                    "answer_id": 2,
+                    "option": "Medium build"
+                },
+                {
+                    "answer_id": 3,
+                    "option": "Solid and sturdy"
+                }
             ]
         },
         {
-            "id": 2,
+            "question_id": 2,
             "question": "What is your typical appetite like?",
             "options": [
-                "Variable, sometimes strong, sometimes weak",
-                "Strong and consistent",
-                "Slow and steady"
+                {
+                    "answer_id": 4,
+                    "option": "Variable, sometimes strong, sometimes weak"
+                },
+                {
+                    "answer_id": 5,
+                    "option": "Strong and consistent"
+                },
+                {
+                    "answer_id": 6,
+                    "option": "Slow and steady"
+                }
             ]
         },
         {
-            "id": 3,
+            "question_id": 3,
             "question": "How is your digestion?",
             "options": [
-                "Irregular, prone to gas and bloating",
-                "Strong, can eat almost anything",
-                "Slow, tendency towards heaviness after meals"
+                {
+                    "answer_id": 7,
+                    "option": "Irregular, prone to gas and bloating"
+                },
+                {
+                    "answer_id": 8,
+                    "option": "Strong, can eat almost anything"
+                },
+                {
+                    "answer_id": 9,
+                    "option": "Slow, tendency towards heaviness after meals"
+                }
             ]
         },
         {
-            "id": 4,
+            "question_id": 4,
             "question": "How do you generally handle stress?",
             "options": [
-                "Become anxious or worried easily",
-                "Tend to get angry or irritable",
-                "Prefer to avoid conflict, may become withdrawn"
+                {
+                    "answer_id": 10,
+                    "option": "Become anxious or worried easily"
+                },
+                {
+                    "answer_id": 11,
+                    "option": "Tend to get angry or irritable"
+                },
+                {
+                    "answer_id": 12,
+                    "option": "Prefer to avoid conflict, may become withdrawn"
+                }
             ]
         },
         {
-            "id": 5,
+            "question_id": 5,
             "question": "How do you sleep?",
             "options": [
-                "Light sleeper, prone to insomnia",
-                "Deep sleeper, but may wake up easily",
-                "Heavy sleeper, difficulty waking up in the morning"
+                {
+                    "answer_id": 13,
+                    "option": "Light sleeper, prone to insomnia"
+                },
+                {
+                    "answer_id": 14,
+                    "option": "Deep sleeper, but may wake up easily"
+                },
+                {
+                    "answer_id": 15,
+                    "option": "Heavy sleeper, difficulty waking up in the morning"
+                }
             ]
         },
         {
-            "id": 6,
+            "question_id": 6,
             "question": "How is your skin?",
             "options": [
-                "Dry, prone to cracking",
-                "Warm, sensitive, prone to rashes",
-                "Oily, prone to acne or congestion"
+                {
+                    "answer_id": 16,
+                    "option": "Dry, prone to cracking"
+                },
+                {
+                    "answer_id": 17,
+                    "option": "Warm, sensitive, prone to rashes"
+                },
+                {
+                    "answer_id": 18,
+                    "option": "Oily, prone to acne or congestion"
+                }
             ]
         },
         {
-            "id": 7,
+            "question_id": 7,
             "question": "How is your hair?",
             "options": [
-                "Dry, thin, and prone to split ends",
-                "Fine, but prone to premature graying or balding",
-                "Thick, oily, and lustrous"
+                {
+                    "answer_id": 19,
+                    "option": "Dry, thin, and prone to split ends"
+                },
+                {
+                    "answer_id": 20,
+                    "option": "Fine, but prone to premature graying or balding"
+                },
+                {
+                    "answer_id": 21,
+                    "option": "Thick, oily, and lustrous"
+                }
             ]
         },
         {
-            "id": 8,
+            "question_id": 8,
             "question": "How do you handle changes in weather?",
             "options": [
-                "Tend to feel cold easily, especially in windy weather",
-                "Tend to feel hot easily, especially in humid weather",
-                "Tend to feel sluggish in damp or cold weather"
+                {
+                    "answer_id": 22,
+                    "option": "Tend to feel cold easily, especially in windy weather"
+                },
+                {
+                    "answer_id": 23,
+                    "option": "Tend to feel hot easily, especially in humid weather"
+                },
+                {
+                    "answer_id": 24,
+                    "option": "Tend to feel sluggish in damp or cold weather"
+                }
             ]
         },
         {
-            "id": 9,
+            "question_id": 9,
             "question": "What is your typical energy level throughout the day?",
             "options": [
-                "High energy in short bursts, followed by fatigue",
-                "Moderate and steady energy throughout the day",
-                "Low energy, especially in the mornings"
+                {
+                    "answer_id": 25,
+                    "option": "High energy in short bursts, followed by fatigue"
+                },
+                {
+                    "answer_id": 26,
+                    "option": "Moderate and steady energy throughout the day"
+                },
+                {
+                    "answer_id": 27,
+                    "option": "Low energy, especially in the mornings"
+                }
             ]
         },
         {
-            "id": 10,
+            "question_id": 10,
             "question": "How do you prefer to spend your free time?",
             "options": [
-                "Engaging in stimulating activities or hobbies",
-                "Exercising or being physically active",
-                "Relaxing or practicing mindfulness"
+                {
+                    "answer_id": 28,
+                    "option": "Engaging in stimulating activities or hobbies"
+                },
+                {
+                    "answer_id": 29,
+                    "option": "Exercising or being physically active"
+                },
+                {
+                    "answer_id": 30,
+                    "option": "Relaxing or practicing mindfulness"
+                }
             ]
         },
         {
-            "id": 11,
+            "question_id": 11,
             "question": "How is your memory?",
             "options": [
-                "Quick to learn, but also quick to forget",
-                "Sharp and precise",
-                "Slow to learn, but once learned, tends to retain information well"
+                {
+                    "answer_id": 31,
+                    "option": "Quick to learn, but also quick to forget"
+                },
+                {
+                    "answer_id": 32,
+                    "option": "Sharp and precise"
+                },
+                {
+                    "answer_id": 33,
+                    "option": "Slow to learn, but once learned, tends to retain information well"
+                }
             ]
         },
         {
-            "id": 12,
+            "question_id": 12,
             "question": "How do you respond to new experiences or changes?",
             "options": [
-                "Tend to feel anxious or overwhelmed",
-                "Tend to feel competitive or ambitious",
-                "Tend to feel cautious or resistant"
+                {
+                    "answer_id": 34,
+                    "option": "Tend to feel anxious or overwhelmed"
+                },
+                {
+                    "answer_id": 35,
+                    "option": "Tend to feel competitive or ambitious"
+                },
+                {
+                    "answer_id": 36,
+                    "option": "Tend to feel cautious or resistant"
+                }
             ]
         },
         {
-            "id": 13,
+            "question_id": 13,
             "question": "What is your natural body temperature like?",
             "options": [
-                "Cold hands and feet, especially in cooler weather",
-                "Warm hands and feet, especially in warmer weather",
-                "Generally stable body temperature"
+                {
+                    "answer_id": 37,
+                    "option": "Cold hands and feet, especially in cooler weather"
+                },
+                {
+                    "answer_id": 38,
+                    "option": "Warm hands and feet, especially in warmer weather"
+                },
+                {
+                    "answer_id": 39,
+                    "option": "Generally stable body temperature"
+                }
             ]
         },
         {
-            "id": 14,
+            "question_id": 14,
             "question": "How do you handle conflicts or confrontations?",
             "options": [
-                "Avoid them whenever possible",
-                "Confront them directly and assertively",
-                "Seek compromise and harmony"
+                {
+                    "answer_id": 40,
+                    "option": "Avoid them whenever possible"
+                },
+                {
+                    "answer_id": 41,
+                    "option": "Confront them directly and assertively"
+                },
+                {
+                    "answer_id": 42,
+                    "option": "Seek compromise and harmony"
+                }
             ]
         },
         {
-            "id": 15,
+            "question_id": 15,
             "question": "How is your general mood?",
             "options": [
-                "Easily excited or enthusiastic, but also prone to anxiety",
-                "Confident and assertive, but also prone to anger",
-                "Calm and steady, but also prone to melancholy"
+                {
+                    "answer_id": 43,
+                    "option": "Easily excited or enthusiastic, but also prone to anxiety"
+                },
+                {
+                    "answer_id": 44,
+                    "option": "Confident and assertive, but also prone to anger"
+                },
+                {
+                    "answer_id": 45,
+                    "option": "Calm and steady, but also prone to melancholy"
+                }
             ]
         }
     ]
