@@ -9,13 +9,36 @@
   align-items: stretch;
   flex-direction: column;
 }
+.Home .progressDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 2rem;
+}
+.Home .progressDiv .percentage {
+  font-size: x-small;
+  width: 2rem;
+  text-align: left;
+}
+.Home .progressDiv .progress-bar {
+  height: 12px;
+  background: rgb(43, 70, 25);
+  z-index: 10000;
+  margin: 1rem 0;
+  margin-left: 0.25rem;
+  display: flex;
+  border-radius: 7rem;
+  justify-content: center;
+  align-items: center;
+}
 .Home .question {
   text-align: center;
   font-weight: bold;
 }
 .Home .topBar {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   margin-top: -5.5rem;
+  z-index: 1000;
   display: flex;
   justify-content: center;
   width: "100%";
@@ -43,16 +66,4 @@
   margin-left: 2rem;
   height: 5rem;
   width: 5rem;
-}
-.Home .form {
-  margin-left: 10rem;
-  margin-top: 5rem;
-  background-color: white;
-}
-.Home .form .input {
-  background-color: rgb(255, 255, 255);
-  border-radius: 5px;
-  height: 1.7rem;
-  width: 20rem;
-  border: 1px solid rgb(169, 166, 166);
 }/*# sourceMappingURL=QuestionaryScreen.css.map */

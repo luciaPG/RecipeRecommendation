@@ -1,73 +1,76 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-
-
-
 :root {
     background-color: rgb(212, 223, 235);
 }
 
-.Home{
-    background-color:  rgba(88, 147, 53,0.95);
+.Home {
+    background-color: rgba(88, 147, 53, 0.95);
     display: flex;
     align-items: stretch;
     flex-direction: column;
 
-.question{
-    text-align: center;
-    font-weight: bold;
-
-}
-.topBar {
-    background-color: rgba(0, 0, 0, 0.5); 
-    margin-top: -5.5rem;
-    display:flex;
-    justify-content: center;
-    width:'100%';
-    .barContent {
-        margin-top: 2.5rem;
-       
+    .progressDiv {
         display: flex;
-        align-items: baseline;
-    
-        .textDiv{
+        flex-direction: row;
+        align-items: center;
+        margin-left: 2rem;
+        .percentage{
+            font-size: x-small;
+            width:2rem;
+            text-align: left;
+  
+        }
+        .progress-bar {
+            height: 12px;
+            background: rgb(43, 70, 25);
+            z-index: 10000;
+            margin: 1rem 0;
+            margin-left: 0.25rem;
             display: flex;
-            flex-direction: column;
-            margin-left: -3rem;
-            .brandName{
-                font-family: 'Poppins', sans-serif;
-                margin-top: -1.4rem;
-                font-size: 1.5rem;
-                color: white;
-                margin-left: 1rem;
-            
+            border-radius: 7rem;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    .question {
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .topBar {
+        background-color: rgba(0, 0, 0, 0.7);
+        margin-top: -5.5rem;
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        width: "100%";
+        .barContent {
+            margin-top: 2.5rem;
+
+            display: flex;
+            align-items: baseline;
+
+            .textDiv {
+                display: flex;
+                flex-direction: column;
+                margin-left: -3rem;
+                .brandName {
+                    font-family: "Poppins", sans-serif;
+                    margin-top: -1.4rem;
+                    font-size: 1.5rem;
+                    color: white;
+                    margin-left: 1rem;
+                }
             }
-            
-        }
 
-        
-
-        .icon {
-            z-index: 500;
-            margin-top: 3rem;
-            margin-left: 2rem;
-            height: 5rem;
-            width: 5rem;
+            .icon {
+                z-index: 500;
+                margin-top: 3rem;
+                margin-left: 2rem;
+                height: 5rem;
+                width: 5rem;
+            }
         }
     }
-}
-
-.form{
-    margin-left: 10rem;
-    margin-top: 5rem;
-    background-color:white;
-    .input{
-        background-color: rgb(255, 255, 255);
-        border-radius: 5px;
-        height:1.7rem;
-        width: 20rem;
-        border: 1px solid rgb(169, 166, 166);
-    
-    }
-}
 }
