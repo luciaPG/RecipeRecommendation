@@ -4,10 +4,13 @@
 /* eslint-disable linebreak-style */
 import './QuestionaryScreen.css';
 import questionary from '/src/assets/questionary.json'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardBody, Text, FormControl, Box, CloseButton, FormLabel, RadioGroup, Stack, Radio, Button, useDisclosure } from '@chakra-ui/react';
 import { PiPlantFill } from "react-icons/pi";
+import { useNavigate } from 'react-router-dom';
 import { MdOutlineError } from "react-icons/md";
+import Video from '/src/assets/mainScreenVideo.mp4'
+import ProgressBar from 'react-bootstrap/ProgressBar'
 import {
     Alert,
     AlertIcon,
@@ -16,16 +19,30 @@ import {
 } from '@chakra-ui/react'
 import cardTheme from './CardStyling.jsx'
 import AlertStyling from './AlertStyling';
+import { useLocation } from 'react-router-dom';
+import axios from 'axios';
+const apiKey = 'GkhP0QwCUZjNSCT2qq4pAQSqodp6iVGB';
+
 
 const QuestionaryScreen = () => {
     const [answers, setAnswers] = useState([]);
+    
     const [currentQuestion, setCurrentQuestion] = useState(0);
+    const navigate = useNavigate();
+    const [percentageP, setPercentageP] = useState(1);
+    const location = useLocation();
+    const user = location.state;
+  JSON.stringify( location.state) // returns the user 
+    
     const {
         isOpen,
         onClose,
         onOpen,
     } = useDisclosure({ defaultIsOpen: false })
 
+    useEffect(() => {
+        setProgressBar(currentQuestion + 1);
+    }, [currentQuestion]);
 
     const handleOptionChange = (option, questionIndex) => {
         let newAnswers = [...answers];
@@ -34,19 +51,70 @@ const QuestionaryScreen = () => {
     };
 
     const handlePreviousQuestion = () => {
+        if (currentQuestion <= 1) {
+            // Navigation  add the navigate after the axios user is provided, try to use history 
+            navigate('/')
+
+        }
+        else if (currentQuestion !== 15) {
+            onClose()
+
+        }
         setCurrentQuestion(prevQuestion => Math.max(prevQuestion - 1, 0));
+
+
     };
 
     const handleNextQuestion = () => {
         setCurrentQuestion(prevQuestion => Math.min(prevQuestion + 1, questionary.questions.length - 1));
+        console.log(user+'yaaaaa')
     };
 
     function finishFunction() {
-        console.log(answers)
+        const transformedAnswers = answers.map((answer, index) => {
+            return {
+                questionId: index + 1,
+                answerId: answer
+            };
+        });
+
+        const jsonAnswers = JSON.stringify(transformedAnswers);
+        postData(jsonAnswers)
+
         if (Object.keys(answers).length !== 15) {
             onOpen()
             console.log('alert')
         }
+    }
+    const postData = async (answers) => {
+        try {
+          const response = await axios({
+            method: 'post',
+            url: 'http://35.173.1.174/users/1NZHLLTAIC/save-answers',
+            headers: {
+              'Content-Type': 'application/json',
+              'X-API-Key': apiKey
+            },
+            data:{
+                answers
+
+            }
+          });
+          console.log(response)
+         
+        } catch (error) {
+          console.error(error);
+        }
+      };
+  
+
+    function setProgressBar(currentQuestion) {
+
+        const percentage = currentQuestion * 100 / 15
+        const integerPercentage = Math.floor(percentage);
+
+        setPercentageP(integerPercentage)
+
     }
     return (
         <div className="Home">
@@ -58,6 +126,9 @@ const QuestionaryScreen = () => {
                         <h1 className='brandName'>RECIPE RECOMMENDATION</h1>
                     </div>
                 </div>
+            </div>
+            <div className="videoBg">
+                <video src={Video} autoPlay loop muted max-width="100%" height="auto"></video>
             </div>
             <Card {...cardTheme.card}>
                 <CardBody {...cardTheme.cardBody}>
@@ -74,7 +145,24 @@ const QuestionaryScreen = () => {
                         >
                             <Text style={{ color: 'black' }}>{option.option}</Text>
                         </Button>
+
+
                     ))}
+
+                    <div className='progressDiv'>
+                        <Text className='percentage'>{percentageP}%</Text>
+                        <ProgressBar
+                            now={percentageP}
+                            striped variant="success"
+                            className='progress-bar'
+                            style={{
+                                width: `${percentageP * 0.9}%`
+                            }}
+                        />
+
+
+                    </div>
+
                     <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', marginTop: '2rem', marginLeft: '2rem' }}>
                         <Button {...cardTheme.btn} colorScheme='teal' size='md' mt={4} onClick={() => handlePreviousQuestion()}>
                             Return
@@ -95,11 +183,11 @@ const QuestionaryScreen = () => {
 
             {isOpen ? (
                 <Alert {...AlertStyling.alert} status='success'>
-                    <MdOutlineError {...AlertStyling.icon}/>
+                    <MdOutlineError {...AlertStyling.icon} />
                     <Box {...AlertStyling.box}>
                         <AlertTitle {...AlertStyling.title}>ERROR</AlertTitle>
                         <AlertDescription {...AlertStyling.description}>
-                           All the questions need to be answered in order to obtain an answer
+                            All the questions need to be answered in order to obtain an answer
                         </AlertDescription>
                     </Box>
                     <CloseButton
@@ -111,7 +199,7 @@ const QuestionaryScreen = () => {
                         onClick={onClose}
                         _active={{ bg: 'black' }}
                         _hover={{ border: 'none' }}
-                        
+
 
                     />
                 </Alert>

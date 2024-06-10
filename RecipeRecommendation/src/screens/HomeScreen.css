@@ -4,7 +4,8 @@
   justify-content: center;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -43,35 +44,48 @@ html, body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  display: flex;
+  flex-direction: row;
   color: white;
   font-size: 2rem;
 }
-.Home .sectionText .buttons .btn {
-  background-color: rgba(88, 147, 53, 0.9);
+.Home .sectionText .icon {
+  z-index: 500;
+  margin-top: 3rem;
+  margin-left: 2rem;
+  margin-right: -10rem;
+  height: 10rem;
+  width: 10rem;
+}
+.Home .sectionText .title {
+  margin-left: 5rem;
+}
+.Home .sectionText .title .btn {
+  background-color: rgba(43, 70, 25, 0.7);
   margin-right: 3rem;
   padding-left: 2rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  margin-left: 5rem;
   padding-right: 2rem;
   border-radius: 7rem;
   width: 30rem;
   font-size: 2rem;
   font-weight: bolder;
 }
-.Home .sectionText .text {
-  font-size: 6rem;
-  font-weight: 900;
+.Home .sectionText .title .text {
+  font-size: 4.5rem;
+  font-weight: bolder;
+  font-family: Georgia, "Times New Roman", Times, serif;
   padding: 0;
 }
-.Home .sectionText .substitle {
-  font-size: 3rem;
+.Home .sectionText .title .substitle {
+  font-size: 1rem;
   font-weight: 1000;
+  font-family: Georgia, "Times New Roman", Times, serif;
   padding: 0;
 }
-.Home .sectionText .icon {
-  position: absolute;
-}
-.Home .sectionText p {
+.Home .sectionText .title p {
   font-size: var(--normalFontSize);
   font-weight: 500;
 }

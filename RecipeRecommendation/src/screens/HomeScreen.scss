@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-
 :root {
     display: flex;
     justify-content: center;
 }
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -25,8 +25,8 @@ html, body {
         left: 0;
         width: 100%;
         height: 100%;
-    
-        video { 
+
+        video {
             min-width: 100%;
             min-height: 100%;
             width: auto;
@@ -39,191 +39,188 @@ html, body {
         }
     }
 
-
-    .sectionText{
+    .sectionText {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
+        display: flex;
+        flex-direction: row;
         color: white;
         font-size: 2rem;
-        
+        .icon {
+            z-index: 500;
+            margin-top: 3rem;
+            margin-left: 2rem;
+            margin-right: -10rem;
+            height: 10rem;
+            width: 10rem;
+        }
+        .title {
+            margin-left: 5rem;
 
-        .buttons{
-            .btn{
-                background-color:  rgba(88, 147, 53, 0.9);
+            .btn {
+                background-color: rgb(43, 70, 25, 0.7);
                 margin-right: 3rem;
                 padding-left: 2rem;
                 margin-top: 2rem;
                 margin-bottom: 2rem;
+                margin-left: 5rem;
                 padding-right: 2rem;
                 border-radius: 7rem;
                 width: 30rem;
                 font-size: 2rem;
                 font-weight: bolder;
+               
+            }
+         
+            .text {
+                font-size: 4.5rem;
+                font-weight: bolder;
+                font-family: Georgia, "Times New Roman", Times, serif;
+
+                padding: 0;
+            }
+            .substitle {
+                font-size: 1rem;
+                font-weight: 1000;
+                font-family: Georgia, "Times New Roman", Times, serif;
+                padding: 0;
+            }
+
+            p {
+                font-size: var(--normalFontSize);
+                font-weight: 500;
             }
         }
-
-        .text{
-            font-size:6rem;
-            font-weight: 900;
-            padding: 0;
-
-
-        }
-        .substitle{
-            font-size: 3rem;
-            font-weight: 1000;
-            padding: 0;
-        }
-        .icon{
-            position: absolute;
-        }
-        p{
-            
-            font-size: var(--normalFontSize);
-            font-weight: 500;
-        }
-
-      
     }
-
 }
 
-@media screen and (max-width: 480px){
-    .Home{
-        .sectionText{
+@media screen and (max-width: 480px) {
+    .Home {
+        .sectionText {
             font-size: 1.5em;
 
-            h1{
+            h1 {
                 font-size: 1rem;
                 font-weight: 900;
             }
 
-            p{
-                padding: 1rem 0 ;
+            p {
+                padding: 1rem 0;
                 font-size: var(--h2FontSize);
                 max-width: 70%;
-                margin:auto
+                margin: auto;
             }
 
-            .btn{
+            .btn {
                 font-size: var(--h3FontSize);
-                margin:auto
+                margin: auto;
             }
         }
     }
-
 }
-@media screen and (min-width: 480px){
-    .Home{
-        .sectionText{
-           font-size: 1.5rem;
+@media screen and (min-width: 480px) {
+    .Home {
+        .sectionText {
+            font-size: 1.5rem;
 
-            h1{
+            h1 {
                 font-size: var(--biggestFontSize);
                 font-weight: 900;
             }
 
-            p{
-                padding: 1rem 0 ;
-                font-size: var(--h2FontSize);
-                max-width: 70%;
-                margin:auto
-            }
-
-            .btn{
-                font-size: var(--h3FontSize);
-                margin:auto
-            }
-        }
-    }
-
-}
-
-@media screen and (max-width: 769px){
-    .Home{
-        .sectionText{
-            h1{
-                font-size: 2rem;
-                font-weight: 900;
-                max-width: 70%;
-                margin:auto;
-            }
-
-            p{
-                font-size: var(--h2FontSize);
-                max-width: 70%;
-                margin:auto;
-            }
-
-            .btn{
-                gap: 0.5rem;
-                padding-right: 2rem;
-                padding-left: 2rem;
-                font-size: var(--h3FontSize);
-                margin:auto;
-            }
-        }
-    }
-}
-
-@media screen and (min-width: 769px){
-    .Home{
-        .sectionText{
-            width:100%;
-            h1{
-                font-size: 3rem;
-                font-weight: 900;
-                max-width: 70%;
-                margin:auto;
-            }
-
-            p{
+            p {
                 padding: 1rem 0;
                 font-size: var(--h2FontSize);
                 max-width: 70%;
-                margin:auto;
+                margin: auto;
             }
 
-            .btn{
-                gap: 0.5rem;
-                padding-right: 2rem;
-                padding-left: 2rem;
+            .btn {
                 font-size: var(--h3FontSize);
-                margin:auto;
+                margin: auto;
             }
         }
     }
 }
 
+@media screen and (max-width: 769px) {
+    .Home {
+        .sectionText {
+            h1 {
+                font-size: 2rem;
+                font-weight: 900;
+                max-width: 70%;
+                margin: auto;
+            }
 
-@media screen and (min-width: 1040px){
-    
-    .Home{
+            p {
+                font-size: var(--h2FontSize);
+                max-width: 70%;
+                margin: auto;
+            }
+
+            .btn {
+                gap: 0.5rem;
+                padding-right: 2rem;
+                padding-left: 2rem;
+                font-size: var(--h3FontSize);
+                margin: auto;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .Home {
+        .sectionText {
+            width: 100%;
+            h1 {
+                font-size: 3rem;
+                font-weight: 900;
+                max-width: 70%;
+                margin: auto;
+            }
+
+            p {
+                padding: 1rem 0;
+                font-size: var(--h2FontSize);
+                max-width: 70%;
+                margin: auto;
+            }
+
+            .btn {
+                gap: 0.5rem;
+                padding-right: 2rem;
+                padding-left: 2rem;
+                font-size: var(--h3FontSize);
+                margin: auto;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1040px) {
+    .Home {
         position: absolute;
-        
 
-        .sectionText{
+        .sectionText {
             padding-right: 0rem;
 
-            h1{
-            font-size: 4rem;
-            font-weight: 900;
-            max-width: 70%;
-            margin: auto;}
+            h1 {
+                font-size: 4rem;
+                font-weight: 900;
+                max-width: 70%;
+                margin: auto;
+            }
 
-            p{
+            p {
                 font-size: var(--h2FontSize);
                 max-width: 70%;
                 margin: auto;
             }
         }
     }
-
-
-
-
-
 }
