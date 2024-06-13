@@ -17,8 +17,8 @@ import {
     AlertTitle,
     AlertDescription,
 } from '@chakra-ui/react'
-import cardTheme from './CardStyling.jsx'
-import AlertStyling from './AlertStyling';
+import cardTheme from '../Styling/CardStyling.jsx'
+import AlertStyling from '../Styling/AlertStyling.jsx';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 const apiKey = 'GkhP0QwCUZjNSCT2qq4pAQSqodp6iVGB';
