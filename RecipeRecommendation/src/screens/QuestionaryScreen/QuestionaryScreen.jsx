@@ -26,14 +26,13 @@ const apiKey = 'GkhP0QwCUZjNSCT2qq4pAQSqodp6iVGB';
 
 const QuestionaryScreen = () => {
     const [answers, setAnswers] = useState([]);
-    
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const navigate = useNavigate();
     const [percentageP, setPercentageP] = useState(1);
     const location = useLocation();
     const user = location.state;
-  JSON.stringify( location.state) // returns the user 
-    
+    JSON.stringify(location.state) // returns the user 
+
     const {
         isOpen,
         onClose,
@@ -67,7 +66,7 @@ const QuestionaryScreen = () => {
 
     const handleNextQuestion = () => {
         setCurrentQuestion(prevQuestion => Math.min(prevQuestion + 1, questionary.questions.length - 1));
-        console.log(user+'yaaaaa')
+        console.log(user + 'yaaaaa')
     };
 
     function finishFunction() {
@@ -81,32 +80,33 @@ const QuestionaryScreen = () => {
         const jsonAnswers = JSON.stringify(transformedAnswers);
         postData(jsonAnswers)
 
+
         if (Object.keys(answers).length !== 15) {
             onOpen()
             console.log('alert')
         }
+
+
     }
     const postData = async (answers) => {
         try {
-          const response = await axios({
-            method: 'post',
-            url: 'http://35.173.1.174/users/1NZHLLTAIC/save-answers',
-            headers: {
-              'Content-Type': 'application/json',
-              'X-API-Key': apiKey
-            },
-            data:{
-                answers
+            const response = await axios({
+                method: 'post',
+                url: 'http://44.192.102.82/users/' + user + '/save-answers',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-API-Key': apiKey
+                },
+                data: answers
+            });
+            console.log(response)
+            navigate('/result', { state: user })
 
-            }
-          });
-          console.log(response)
-         
         } catch (error) {
-          console.error(error);
+            console.error(error);
         }
-      };
-  
+    };
+
 
     function setProgressBar(currentQuestion) {
 

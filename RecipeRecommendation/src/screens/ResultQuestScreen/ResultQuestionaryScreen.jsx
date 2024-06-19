@@ -16,28 +16,37 @@ import {
 } from '@chakra-ui/react'
 import cardTheme from '../Styling/CardStyling.jsx'
 import AlertStyling from '../Styling/AlertStyling.jsx';
+import { useLocation } from 'react-router-dom';
+
 import axios from 'axios';
 const apiKey = 'GkhP0QwCUZjNSCT2qq4pAQSqodp6iVGB';
 
 const ResultRecipe = () => {
     const [doshaType, setDoshaType] = useState('');
     const [recipes, setRecipes] = useState([]);
+    const location = useLocation();
+    const user = location.state;
+
     const { isOpen, onClose, onOpen } = useDisclosure({ defaultIsOpen: false });
 
     useEffect(() => {
         fetchDoshaType();
+        console.log(user)
     }, []);
 
     const fetchDoshaType = async () => {
         try {
-            const response = await axios.put('http://35.173.1.174/users/1NZHLLTAIC/calculate-dosha', {}, {
+            const response = await axios.put('http://44.192.102.82/users/' + user + '/calculate-dosha', {}, {
                 headers: {
                     'X-API-Key': 'GkhP0QwCUZjNSCT2qq4pAQSqodp6iVGB'
                 }
             });
             if (response.status === 200) { // 检查响应状态码是否为200
                 const data = response.data; // 直接从响应中获取数据
-                console.log('Dosha Type:', data.dosha_type); // 调试信息
+                console.log('Dosha Type:', data); // 调试信息
+               
+                JSON.stringify(response)
+                console.log('___________________________')
                 setDoshaType(data.dosha_type);
                 fetchRecipes(data.dosha_type);
             } else {
@@ -51,7 +60,7 @@ const ResultRecipe = () => {
 
     const fetchRecipes = async (doshaType) => {
         try {
-            const response = await axios.get(`http://35.173.1.174/recipes?doshaType=${doshaType}`, {
+            const response = await axios.get(`http://44.192.102.82/recipes?doshaType=${doshaType}`, {
                 headers: {
                     'X-API-Key': 'GkhP0QwCUZjNSCT2qq4pAQSqodp6iVGB'
                 }
@@ -89,30 +98,29 @@ const ResultRecipe = () => {
                         </Box>
                     </CardBody>
                 </Card>
-
-                <Card {...cardTheme.card} mt={6}>
-                    <CardBody {...cardTheme.cardBody}>
-                        <Box textAlign="center">
-                            <Text fontSize="2xl" fontWeight="bold">Recommended Recipes</Text>
-                            {recipes.length > 0 ? (
-                                <Box mt={4}>
-                                    {recipes.map((recipe, index) => (
-                                        <Box key={index} p={4} borderWidth={1} borderRadius="lg" overflow="hidden" mt={2}>
+                <Text fontSize="2xl" fontWeight="bold">Recommended Recipes</Text>
+                {recipes.map((recipe, index) => (
+                    <Card key={index} {...cardTheme.card} mt={6}>
+                        <CardBody {...cardTheme.cardBody}>
+                            <Box textAlign="center">
+                               {console.log(recipes)}
+                                {recipes.length > 0 ? (
+                                    <Box mt={4}>
+                                        <Box p={4} borderWidth={1} borderRadius="lg" overflow="hidden" mt={2}>
                                             <Text fontSize="xl" fontWeight="bold">{recipe.name}</Text>
                                             <Text fontSize="md">Category: {recipe.recipe_category}</Text>
                                             <Text fontSize="md">Calories: {recipe.calories}</Text>
-                                            <Text fontSize="md">Rating: {recipe.rating}</Text>
-                                            <Text fontSize="md">Prep Time: {recipe.prep_time}</Text>
-                                            <Text fontSize="md">Total Time: {recipe.total_time}</Text>
+                                            <Text fontSize="md">Rating: {recipe.recipe_rating
+                                            }</Text>
+                                            <Text fontSize="md">Prep Time: {recipe.preptime_min}</Text>
+                                            <Text fontSize="md">Total Time: {recipe.totaltime_min}</Text>
                                         </Box>
-                                    ))}
-                                </Box>
-                            ) : (
-                                <Text fontSize="xl" mt={4}>No recipes found or loading...</Text>
-                            )}
-                        </Box>
-                    </CardBody>
-                </Card>
+                                    </Box>
+                                ) : null}
+                            </Box>
+                        </CardBody>
+                    </Card>
+                ))}
             </Box>
             {isOpen && (
                 <Alert {...AlertStyling.alert} status='error'>

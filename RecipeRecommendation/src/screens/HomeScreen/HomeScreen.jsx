@@ -20,7 +20,7 @@ const HomeScreen = () => {
       try {
         const response = await axios({
           method: 'post',
-          url: 'http://35.173.1.174/users',
+          url: 'http://44.192.102.82/users',
           headers: {
             'Content-Type': 'application/json',
             'X-API-Key': apiKey
