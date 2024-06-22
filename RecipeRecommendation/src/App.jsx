@@ -4,6 +4,8 @@
 import QuestionaryScreen from './screens/QuestionaryScreen/QuestionaryScreen.jsx';
 
 import ResultQuestionaryScreen from './screens/ResultQuestScreen/ResultQuestionaryScreen.jsx';
+
+import RecipeScreen from './screens/RecipeScreen/RecipeScreen.jsx';
 import HomeScreen from '/src/screens/HomeScreen/HomeScreen.jsx';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
@@ -16,6 +18,7 @@ function App() {
           <Route path='/' element={<HomeScreen/>} />
           <Route path='/questionary' element={<QuestionaryScreen/>} />
           <Route path='/result' element={<ResultQuestionaryScreen/>} />
+          <Route path='/recipe' element={<RecipeScreen/>} />
         </Routes>
       </BrowserRouter>
   );

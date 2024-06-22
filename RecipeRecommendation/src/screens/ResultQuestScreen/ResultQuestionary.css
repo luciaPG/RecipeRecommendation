@@ -1,0 +1,101 @@
+.topBar {
+  background-color: rgba(0, 0, 0, 0.7);
+  margin-top: -5.5rem;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  width: "100%";
+}
+.topBar .barContent {
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: baseline;
+}
+.topBar .barContent .textDiv {
+  display: flex;
+  flex-direction: column;
+  margin-left: -3rem;
+}
+.topBar .barContent .textDiv .brandName {
+  font-family: "Poppins", sans-serif;
+  margin-top: -1.4rem;
+  font-size: 1.5rem;
+  color: white;
+  margin-left: 1rem;
+}
+.topBar .barContent .icon {
+  z-index: 500;
+  margin-top: 3rem;
+  margin-left: 2rem;
+  height: 5rem;
+  width: 5rem;
+}
+
+.information {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.information .cookTime {
+  font-size: 40px;
+  width: 15rem;
+  font-weight: 700;
+  color: rgb(61, 102, 37);
+}
+.information .mainInfo {
+  margin-left: 1rem;
+  width: 50rem;
+  font-size: smaller;
+}
+.information .mainInfo .name {
+  font-size: xx-large;
+  font-weight: bold;
+  margin-left: 10rem;
+}
+.information .mainInfo .name:hover {
+  color: rgb(85, 141, 52);
+}
+.information .mainInfo .infoPhoto {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.information .mainInfo .infoPhoto .recipe-image {
+  width: 200px;
+  height: 200px;
+  margin-right: 2rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  border-radius: 15px;
+}
+.information .mainInfo .infoPhoto .extraInfo {
+  margin-left: 4rem;
+  float: left;
+}
+.information .mainInfo .infoPhoto .extraInfo .flexContainer {
+  display: flex;
+  align-items: center;
+  margin: -1rem;
+}
+.information .mainInfo .boldName {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.boxHover {
+  transition: background-color 0.3s ease;
+}
+
+.boxHover:hover {
+  color: rgb(61, 102, 37);
+}
+
+.bordered-title {
+  border: 5px solid rgb(255, 255, 255);
+  border-radius: 5rem;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}/*# sourceMappingURL=ResultQuestionary.css.map */
