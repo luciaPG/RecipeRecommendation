@@ -5,7 +5,7 @@ const baseStyle = {
     zIndex:1000,
     padding:'2rem',
     marginTop:'2rem',
-    marginLeft:'15rem',
+    marginLeft:'13rem',
     width:'50rem',
     display:'flex',
     alignItems:'stretch',
