@@ -27,27 +27,14 @@ const RecipeSchedulerScreen = () => {
         console.log(recipes);
     }, []);
 
-    function calculateHealthScore(recipe, doshaType) {
-        switch (doshaType) {
-            case 'Vata':
-                return recipe.vata_dosha_score;
-            case 'Pitta':
-                return recipe.pitta_dosha_score;
-            case 'Kapha':
-                return recipe.kapha_dosha_score;
-            default:
-                return 0;
-        }
-    }
-
+    
     function choose7healthiestRecipes() {
         let healthiestRecipes = [];
         const daysWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-        const dosha_Type = doshatype.charAt(0).toLowerCase() + doshatype.slice(1);
 
         if (!recipes) return healthiestRecipes;
         const filteredAndSortedRecipes = recipes
-            .sort((a, b) => calculateHealthScore(a, dosha_Type) - calculateHealthScore(b, dosha_Type));
+            .sort((a, b) => a.score - b.score);
 
         console.log(filteredAndSortedRecipes + 'aquiiiiii')
         healthiestRecipes = filteredAndSortedRecipes.slice(0, 7);
