@@ -4,16 +4,16 @@
 /* eslint-disable linebreak-style */
 import './QuestionaryScreen.css';
 import questionary from '/src/assets/questionary.json'
-import React, { useState, useEffect } from 'react';
-import { Card, CardBody, Text, FormControl, Box, CloseButton, FormLabel, RadioGroup, Stack, Radio, Button, useDisclosure } from '@chakra-ui/react';
+import  { useState, useEffect } from 'react';
+import { Card, CardBody, Text, Box, CloseButton, Button, useDisclosure } from '@chakra-ui/react';
 import { PiPlantFill } from "react-icons/pi";
 import { useNavigate } from 'react-router-dom';
 import { MdOutlineError } from "react-icons/md";
 import Video from '/src/assets/mainScreenVideo.mp4'
 import ProgressBar from 'react-bootstrap/ProgressBar'
+import { Spinner } from '@chakra-ui/react'
 import {
     Alert,
-    AlertIcon,
     AlertTitle,
     AlertDescription,
 } from '@chakra-ui/react'
@@ -30,6 +30,7 @@ const QuestionaryScreen = () => {
     const navigate = useNavigate();
     const [percentageP, setPercentageP] = useState(1);
     const location = useLocation();
+    const [isLoading, setIsLoading] = useState(false);
     const user = location.state;
     JSON.stringify(location.state) // returns the user 
 
@@ -40,7 +41,7 @@ const QuestionaryScreen = () => {
     } = useDisclosure({ defaultIsOpen: false })
 
     useEffect(() => {
-        setProgressBar(currentQuestion + 1);
+        setProgressBar(currentQuestion);
     }, [currentQuestion]);
 
     const handleOptionChange = (option, questionIndex) => {
@@ -51,7 +52,6 @@ const QuestionaryScreen = () => {
 
     const handlePreviousQuestion = () => {
         if (currentQuestion <= 1) {
-            // Navigation  add the navigate after the axios user is provided, try to use history 
             navigate('/')
 
         }
@@ -70,6 +70,7 @@ const QuestionaryScreen = () => {
     };
 
     function finishFunction() {
+        setIsLoading(true);
         const transformedAnswers = answers.map((answer, index) => {
             return {
                 questionId: index + 1,
@@ -79,6 +80,8 @@ const QuestionaryScreen = () => {
 
         const jsonAnswers = JSON.stringify(transformedAnswers);
         postData(jsonAnswers)
+
+
 
 
         if (Object.keys(answers).length !== 15) {
@@ -172,8 +175,8 @@ const QuestionaryScreen = () => {
                                 Continue
                             </Button>
                         ) : (
-                            <Button {...cardTheme.btn} colorScheme='teal' size='md' mt={4} onClick={() => finishFunction()}>
-                                Finish
+                            <Button {...cardTheme.btn} colorScheme='teal' size='md' mt={4} onClick={finishFunction} disabled={isLoading}>
+                                {isLoading ? <Spinner style={{width:'1rem',height:'1rem'}} /> : 'Finish'}
                             </Button>
                         )}
                     </div>
