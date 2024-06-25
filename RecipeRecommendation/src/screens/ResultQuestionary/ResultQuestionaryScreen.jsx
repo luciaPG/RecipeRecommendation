@@ -167,7 +167,7 @@ const ResultRecipe = () => {
                             {doshaType ? (
                                 <Image
                                     boxSize="10rem"
-                                    objectFit="cover"
+                                    objectFit="fill"
                                     src={`/src/assets/${doshaType}.jpg`}
                                 />
                             ) : (
