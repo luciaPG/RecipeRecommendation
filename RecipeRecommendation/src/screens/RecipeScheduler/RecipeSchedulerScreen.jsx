@@ -34,9 +34,7 @@ const RecipeSchedulerScreen = () => {
 
         if (!recipes) return healthiestRecipes;
         const filteredAndSortedRecipes = recipes
-            .sort((a, b) => a.score - b.score);
-
-        console.log(filteredAndSortedRecipes + 'aquiiiiii')
+            .sort((a, b) => a.score - b.score)
         healthiestRecipes = filteredAndSortedRecipes.slice(0, 7);
 
         return (
@@ -49,9 +47,11 @@ const RecipeSchedulerScreen = () => {
                             <Text className='iconText'>Back</Text>
                         </Box>
 
-                        <Text fontSize="xxx-large" textAlign={'center'} className='title' fontWeight="bold">
-                    <span className='bordered-title'>Weekly Food Planning</span>
-                </Text>
+
+
+                        <Text fontSize="xxx-large" textAlign={'center'} className='title' color={'white'} fontWeight="bold">
+                                <span className='bordered-title'>Weekly Food Planning</span>
+                            </Text>
 
 
                     </Box>
