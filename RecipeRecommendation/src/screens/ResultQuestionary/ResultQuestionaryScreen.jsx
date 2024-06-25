@@ -45,16 +45,16 @@ const ResultRecipe = () => {
                     'X-API-Key': 'GkhP0QwCUZjNSCT2qq4pAQSqodp6iVGB'
                 }
             });
-            if (response.status === 200) { 
-                const data = response.data; 
-                console.log('Dosha Type:', data); 
+            if (response.status === 200) {
+                const data = response.data;
+                console.log('Dosha Type:', data);
                 setDoshaType(data.dosha_type);
                 fetchRecipes(data.dosha_type);
             } else {
                 throw new Error('Failed to fetch dosha type');
             }
         } catch (error) {
-            console.error('Error fetching dosha type:', error); 
+            console.error('Error fetching dosha type:', error);
             onOpen();
         }
     };
@@ -69,14 +69,14 @@ const ResultRecipe = () => {
             });
             if (response.status === 200) {
                 const data = response.data;
-                console.log('Recipes:', data); 
-                setRecipes(data); 
+                console.log('Recipes:', data);
+                setRecipes(data);
             } else {
                 throw new Error('Failed to fetch recipes');
             }
         } catch (error) {
             console.log(doshaType)
-            console.error('Error fetching recipes:', error); 
+            console.error('Error fetching recipes:', error);
             onOpen();
         }
     };
@@ -100,16 +100,16 @@ const ResultRecipe = () => {
             });
             if (response.status === 200) {
                 const data = response.data;
-                console.log('Similar Recipes:', data); 
+                console.log('Similar Recipes:', data);
                 setSimilarRecipes(prevState => ({
                     ...prevState,
                     [recipeId]: data
-                })); 
+                }));
             } else {
                 throw new Error('Failed to fetch similar recipes');
             }
         } catch (error) {
-            console.error('Error fetching similar recipes:', error); 
+            console.error('Error fetching similar recipes:', error);
             onOpen();
         }
     };
@@ -142,7 +142,7 @@ const ResultRecipe = () => {
             }
         } catch (error) {
             console.log(doshaType)
-            console.error('Error fetching recipes:', error); 
+            console.error('Error fetching recipes:', error);
             onOpen();
         }
 
@@ -174,109 +174,109 @@ const ResultRecipe = () => {
                                 <Spinner />
                             )}
 
-                            <Button onClick={() => navigate('/recipeScheduler', {state:{doshaType}})} style={{ marginTop: '1.5rem' }}>See Your Weekly Planning</Button>
-                    </Box>
-                </CardBody>
-            </Card>
-            <Text fontSize="xxx-large" textAlign={'center'} className='title' fontWeight="bold">
-                <span className='bordered-title'>Recommended Recipes</span>
-            </Text>
-            {recipes.map((recipe, index) => (
-                <Card key={index} {...cardTheme.card} mt={6}>
-                    <CardBody {...cardTheme.cardBody}>
-                        <Box textAlign="center">
-                            {console.log(recipes)}
-                            {recipes.length > 0 ? (
-                                <Box mt={4}>
-                                    <Box p={4} borderWidth={1} borderRadius="lg" overflow="hidden" mt={2}>
-                                        <div className='information'>
-                                            <div className='mainInfo'>
-                                                <Text
-                                                    className='name'
-                                                    onClick={() => navigate('/recipe', {
-                                                        state: { recipe }
-                                                    })}
-                                                    cursor="pointer"
-                                                >
-                                                    {recipe.recipe_name}
-                                                </Text>
-                                                <div className='infoPhoto'>
-
-                                                    <img src={recipe.image_url && recipe.image_url.trim() !== "" ? recipe.image_url : "/src/assets/noImage.jpg"} alt="Recipe" className="recipe-image card-image" />
-                                                    <div className='extraInfo'>
-
-
-                                                        <div className='flexContainer'>
-                                                            <Text className='boldName'>Category:</Text>
-                                                            <Text fontSize="md">{recipe.recipe_category}</Text>
-                                                        </div>
-                                                        <div className='flexContainer'>
-                                                            <Text className='boldName'>Calories:</Text>
-                                                            <Text fontSize="md">{recipe.calories}</Text>
-                                                        </div>
-                                                        <div className='flexContainer'>
-                                                            <Text className='boldName'>Protein Content:</Text>
-                                                            <Text fontSize="md">{recipe.protein_content}</Text>
-                                                        </div>
-                                                        <div className='flexContainer'>
-                                                            <Text className='boldName'>Fiber Content:</Text>
-                                                            <Text fontSize="md">{recipe.fiber_content}</Text>
-                                                        </div>
-                                                        <div className='flexContainer'>
-                                                            <Text className='boldName'>Fat Content:</Text>
-                                                            <Text fontSize="md">{recipe.fat_content}</Text>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                            <Text className='cookTime' fontSize="md">{convertMinutesToHours(recipe.cooktime_min)}</Text>
-                                        </div>
-                                        <Button mt={2} onClick={() => toggleSimilarRecipes(recipe.recipe_id)}>
-                                            {showSimilarRecipes[recipe.recipe_id] ? 'Hide' : 'See More'}
-                                        </Button>
-                                        {showSimilarRecipes[recipe.recipe_id] && similarRecipes[recipe.recipe_id] && (
-                                            <Box mt={4}>
-                                                <Text fontSize="xx-large" color={'rgb(61, 102, 37)'} marginTop={'3rem'} fontWeight="bolder">Similar Recipes:</Text>
-                                                {similarRecipes[recipe.recipe_id].map((similarRecipe, idx) => (
-                                                    <Box key={idx} p={2} borderWidth={1} borderRadius="md" mt={2} className="boxHover">
-                                                        <Text fontSize="md" fontWeight={'bold'} onClick={() => goSimilarRecipe(similarRecipe.recipe_id)}>{similarRecipe.recipe_name}</Text>
-                                                    </Box>
-                                                ))}
-                                            </Box>
-                                        )}
-
-                                    </Box>
-                                </Box>
-                            ) : null}
+                            <Button onClick={() => navigate('/recipeScheduler', { state: { doshaType } })} style={{ marginTop: '1.5rem' }}>See Your Weekly Planning</Button>
                         </Box>
                     </CardBody>
                 </Card>
-            ))}
-        </Box>
+                <Text fontSize="xxx-large" textAlign={'center'} className='title' fontWeight="bold">
+                    <span className='bordered-title'>Recommended Recipes</span>
+                </Text>
+                {recipes.map((recipe, index) => (
+                    <Card key={index} {...cardTheme.card} mt={6}>
+                        <CardBody {...cardTheme.cardBody}>
+                            <Box textAlign="center">
+                                {console.log(recipes)}
+                                {recipes.length > 0 ? (
+                                    <Box mt={4}>
+                                        <Box p={4} borderWidth={1} borderRadius="lg" overflow="hidden" mt={2}>
+                                            <div className='information'>
+                                                <div className='mainInfo'>
+                                                    <Text
+                                                        className='name'
+                                                        onClick={() => navigate('/recipe', {
+                                                            state: { recipe }
+                                                        })}
+                                                        cursor="pointer"
+                                                    >
+                                                        {recipe.recipe_name}
+                                                    </Text>
+                                                    <div className='infoPhoto'>
+
+                                                        <img src={recipe.image_url && recipe.image_url.trim() !== "" ? recipe.image_url : "/src/assets/noImage.jpg"} alt="Recipe" className="recipe-image card-image" />
+                                                        <div className='extraInfo'>
+
+
+                                                            <div className='flexContainer'>
+                                                                <Text className='boldName'>Category:</Text>
+                                                                <Text fontSize="md">{recipe.recipe_category}</Text>
+                                                            </div>
+                                                            <div className='flexContainer'>
+                                                                <Text className='boldName'>Calories:</Text>
+                                                                <Text fontSize="md">{recipe.calories}</Text>
+                                                            </div>
+                                                            <div className='flexContainer'>
+                                                                <Text className='boldName'>Protein Content:</Text>
+                                                                <Text fontSize="md">{recipe.protein_content}</Text>
+                                                            </div>
+                                                            <div className='flexContainer'>
+                                                                <Text className='boldName'>Fiber Content:</Text>
+                                                                <Text fontSize="md">{recipe.fiber_content}</Text>
+                                                            </div>
+                                                            <div className='flexContainer'>
+                                                                <Text className='boldName'>Fat Content:</Text>
+                                                                <Text fontSize="md">{recipe.fat_content}</Text>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <Text className='cookTime' fontSize="md">{convertMinutesToHours(recipe.cooktime_min)}</Text>
+                                            </div>
+                                            <Button mt={2} onClick={() => toggleSimilarRecipes(recipe.recipe_id)}>
+                                                {showSimilarRecipes[recipe.recipe_id] ? 'Hide' : 'See More'}
+                                            </Button>
+                                            {showSimilarRecipes[recipe.recipe_id] && similarRecipes[recipe.recipe_id] && (
+                                                <Box mt={4}>
+                                                    <Text fontSize="xx-large" color={'rgb(61, 102, 37)'} marginTop={'3rem'} fontWeight="bolder">Similar Recipes:</Text>
+                                                    {similarRecipes[recipe.recipe_id].slice(1).map((similarRecipe, idx) => (
+                                                        <Box key={idx} p={2} borderWidth={1} borderRadius="md" mt={2} className="boxHover">
+                                                            <Text fontSize="md" fontWeight={'bold'} onClick={() => goSimilarRecipe(similarRecipe.recipe_id)}>{similarRecipe.recipe_name}</Text>
+                                                        </Box>
+                                                    ))}
+                                                </Box>
+                                            )}
+
+                                        </Box>
+                                    </Box>
+                                ) : null}
+                            </Box>
+                        </CardBody>
+                    </Card>
+                ))}
+            </Box>
             {
-        isOpen && (
-            <Alert {...AlertStyling.alert} status='error'>
-                <MdOutlineError {...AlertStyling.icon} />
-                <Box {...AlertStyling.box}>
-                    <AlertTitle {...AlertStyling.title}>ERROR</AlertTitle>
-                    <AlertDescription {...AlertStyling.description}>
-                        Failed to fetch Dosha type or recipes. Please try again later.
-                    </AlertDescription>
-                </Box>
-                <CloseButton
-                    {...AlertStyling.closeButton}
-                    alignSelf='flex-start'
-                    position='relative'
-                    right={-1}
-                    top={-1}
-                    onClick={onClose}
-                    _active={{ bg: 'black' }}
-                    _hover={{ border: 'none' }}
-                />
-            </Alert>
-        )
-    }
+                isOpen && (
+                    <Alert {...AlertStyling.alert} status='error'>
+                        <MdOutlineError {...AlertStyling.icon} />
+                        <Box {...AlertStyling.box}>
+                            <AlertTitle {...AlertStyling.title}>ERROR</AlertTitle>
+                            <AlertDescription {...AlertStyling.description}>
+                                Failed to fetch Dosha type or recipes. Please try again later.
+                            </AlertDescription>
+                        </Box>
+                        <CloseButton
+                            {...AlertStyling.closeButton}
+                            alignSelf='flex-start'
+                            position='relative'
+                            right={-1}
+                            top={-1}
+                            onClick={onClose}
+                            _active={{ bg: 'black' }}
+                            _hover={{ border: 'none' }}
+                        />
+                    </Alert>
+                )
+            }
         </div>
     );
 };
