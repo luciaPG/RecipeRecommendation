@@ -163,7 +163,9 @@ const ResultRecipe = () => {
                 <Card {...cardTheme.card}>
                     <CardBody {...cardTheme.cardBody}>
                         <Box className='doshaDiv' textAlign="center">
-                            <Text fontSize="50" marginTop={'-1rem'} fontWeight="bold">YOUR DOSHA TYPE</Text>
+                            <Text fontSize="xxx-large" textAlign={'center'} className='title' color={'black'} fontWeight="bold">
+                                <span className='bordered-title'>Your Dosha Type</span>
+                            </Text>
                             {doshaType ? (
                                 <Image
                                     boxSize="10rem"
