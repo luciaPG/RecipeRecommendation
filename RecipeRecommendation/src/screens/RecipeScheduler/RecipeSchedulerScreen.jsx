@@ -49,7 +49,9 @@ const RecipeSchedulerScreen = () => {
                             <Text className='iconText'>Back</Text>
                         </Box>
 
-                        <Text className="weeklyFoodPlanning">Weekly Food Planning</Text>
+                        <Text fontSize="xxx-large" textAlign={'center'} className='title' fontWeight="bold">
+                    <span className='bordered-title'>Weekly Food Planning</span>
+                </Text>
 
 
                     </Box>
